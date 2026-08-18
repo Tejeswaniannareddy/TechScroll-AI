@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="TechScroll AI - AI-powered technology Reel recommendations"
+    >
+
+    <title>TechScroll AI</title>
+
+    <!-- IMPORTANT: CSS FILE -->
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-mark">✦</span>
+            TechScroll <span>AI</span>
+        </div>
+
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            AI ENGINE ONLINE
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    AI-POWERED INTEREST INTELLIGENCE
+                </div>
+
+                <h1>
+                    Make your
+                    <span>scrolling</span>
+                    smarter.
+                </h1>
+
+                <p>
+                    TechScroll AI understands what your Reel
+                    interactions reveal about your deeper
+                    technology interests — then recommends
+                    useful content instead of more noise.
+                </p>
+
+                <button
+                    id="analyzeBtn"
+                    type="button"
+                    class="primary-btn"
+                >
+                    Analyze My Reel History
+                    <b>→</b>
+                </button>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="hero-card-top">
+
+                    <span>
+                        LIVE INTEREST INFERENCE
+                    </span>
+
+                    <span class="live-dot">
+                        ●
+                    </span>
+
+                </div>
+
+
+                <div class="signal">
+
+                    <div class="signal-icon">
+                        ⌘
+                    </div>
+
+                    <div>
+                        <strong>
+                            Java Meme
+                        </strong>
+
+                        <small>
+                            94% watched · liked
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="signal">
+
+                    <div class="signal-icon">
+                        ⚡
+                    </div>
+
+                    <div>
+                        <strong>
+                            Software Engineer Lifestyle
+                        </strong>
+
+                        <small>
+                            91% watched · saved
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="signal">
+
+                    <div class="signal-icon">
+                        ◇
+                    </div>
+
+                    <div>
+                        <strong>
+                            Coding Interview Joke
+                        </strong>
+
+                        <small>
+                            88% watched · liked
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="inference">
+
+                    <small>
+                        LATENT INTEREST
+                    </small>
+
+                    <strong>
+                        Software Engineering
+                    </strong>
+
+                    <span>
+                        94% confidence
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             REEL HISTORY
+        ========================== -->
+
+        <section class="history-section">
+
+            <div class="section-heading">
+
+                <small>
+                    SAMPLE INTERACTION HISTORY
+                </small>
+
+                <h2>
+                    What you've been
+                    <span>watching.</span>
+                </h2>
+
+                <p>
+                    TechScroll looks at the complete interaction
+                    pattern rather than matching a single keyword.
+                </p>
+
+            </div>
+
+
+            <!-- app.js fills this -->
+            <div
+                id="reels"
+                class="reels"
+            ></div>
+
+        </section>
+
+
+        <!-- =========================
+             AI RESULT
+        ========================== -->
+
+        <section class="result-section">
+
+            <div class="section-heading">
+
+                <small>
+                    AI ANALYSIS
+                </small>
+
+                <h2>
+                    From scrolling to
+                    <span>learning.</span>
+                </h2>
+
+            </div>
+
+
+            <!-- app.js fills this -->
+            <div
+                id="result"
+                class="result-container"
+            >
+
+                <div class="waiting">
+
+                    <div class="waiting-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Ready to analyze.
+                    </h3>
+
+                    <p>
+                        Click "Analyze My Reel History"
+                        to discover your technology interests.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BUILT-IN TRAP
+        ========================== -->
+
+        <section class="comparison-section">
+
+            <div class="section-heading">
+
+                <small>
+                    BUILT-IN TRAP
+                </small>
+
+                <h2>
+                    Why TechScroll is
+                    <span>different.</span>
+                </h2>
+
+                <p>
+                    A shallow recommender sees Java.
+                    TechScroll understands the broader
+                    software-engineering interest.
+                </p>
+
+            </div>
+
+
+            <div class="comparison">
+
+                <!-- SHALLOW -->
+
+                <div class="comparison-card shallow">
+
+                    <div class="comparison-label">
+                        SHALLOW RECOMMENDER
+                    </div>
+
+
+                    <div class="history-mini">
+
+                        <span>Java Meme</span>
+                        <span>Engineer Lifestyle</span>
+                        <span>Coding Joke</span>
+                        <span>Laptop</span>
+
+                    </div>
+
+
+                    <div class="arrow">
+                        ↓
+                    </div>
+
+
+                    <div
+                        id="shallowRecommendation"
+                        class="bad-result"
+                    >
+                        Another generic Java Reel
+                    </div>
+
+
+                    <p>
+                        Matches the most obvious keyword.
+                    </p>
+
+                </div>
+
+
+                <!-- VS -->
+
+                <div class="vs">
+                    VS
+                </div>
+
+
+                <!-- TECHSCROLL -->
+
+                <div class="comparison-card smart">
+
+                    <div class="comparison-label">
+                        TECHSCROLL AI
+                    </div>
+
+
+                    <div class="history-mini">
+
+                        <span>Java Meme</span>
+                        <span>Engineer Lifestyle</span>
+                        <span>Coding Joke</span>
+                        <span>Laptop</span>
+
+                    </div>
+
+
+                    <div class="arrow">
+                        ↓
+                    </div>
+
+
+                    <div
+                        id="techRecommendation"
+                        class="good-result"
+                    >
+                        Analyze history to discover
+                    </div>
+
+
+                    <p>
+                        Infers broader interests from
+                        semantic and behavioral signals.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INTEREST GRAPH
+        ========================== -->
+
+        <section class="graph-section">
+
+            <div class="section-heading">
+
+                <small>
+                    INTEREST INTELLIGENCE
+                </small>
+
+                <h2>
+                    Your technology
+                    <span>interest graph.</span>
+                </h2>
+
+                <p>
+                    Your interest profile evolves from
+                    the patterns found in your interactions.
+                </p>
+
+            </div>
+
+
+            <!-- graph.js fills this -->
+            <div
+                id="interestGraph"
+                class="interest-graph"
+            >
+
+                <div class="graph-placeholder">
+                    Analyze your Reel history to generate
+                    your personalized interest graph.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         LOAD ONLY ONCE
+    ========================== -->
+
+    <script src="./graph.js"></script>
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
