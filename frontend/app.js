@@ -1,7 +1,7 @@
-const API_URL =
-    window.location.hostname === "localhost"
-        ? "http://localhost:5000"
-        : "https://YOUR-RENDER-BACKEND.onrender.com";
+const API_URL = "https://techscroll-ai.onrender.com";
+
+console.log("TechScroll API:", API_URL);
+
 const reels = [
     {
         title: "Java Developer Meme",
@@ -610,36 +610,16 @@ function updateComparison(
 }
 
 
-async function sendFeedback(
-    feedback,
-    interest
-) {
-
-    console.log(
-        "Sending feedback:",
-        feedback
-    );
-
+async function sendFeedback(feedback, interest) {
 
     const status =
-        document.getElementById(
-            "feedbackStatus"
-        );
-
-
-    if (status) {
-
-        status.innerHTML =
-            "Updating interest profile...";
-
-    }
-
+        document.getElementById("feedbackStatus");
 
     try {
 
         const response =
             await fetch(
-    `${API_URL}/api/feedback`,
+                `${API_URL}/api/feedback`,
                 {
                     method: "POST",
 
@@ -649,11 +629,8 @@ async function sendFeedback(
                     },
 
                     body: JSON.stringify({
-
                         feedback,
-
                         interest
-
                     })
                 }
             );
@@ -695,7 +672,7 @@ async function sendFeedback(
         if (status) {
 
             status.innerHTML = `
-                <div class="feedback-success">
+                <div class="feedback-error">
                     Feedback could not reach the backend.
                 </div>
             `;
@@ -744,9 +721,15 @@ async function analyzeHistory() {
             "Sending Reel history to backend..."
         );
 
+        console.log(
+            "API:",
+            `${API_URL}/api/recommend`
+        );
+
 
         const response =
-            await fetch(`${API_URL}/api/recommend`,
+            await fetch(
+                `${API_URL}/api/recommend`,
                 {
                     method: "POST",
 
@@ -756,7 +739,7 @@ async function analyzeHistory() {
                     },
 
                     body: JSON.stringify({
-                        reels
+                        reels: reels
                     })
                 }
             );
@@ -782,7 +765,7 @@ async function analyzeHistory() {
 
             throw new Error(
                 data.error ||
-                "Backend request failed."
+                `Backend returned ${response.status}`
             );
 
         }
